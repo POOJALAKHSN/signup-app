@@ -1,7 +1,26 @@
 <<<<<<< HEAD
 # SignupApp
-
+---
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.14.
+
+
+## Project Features
+
+- Reactive Form validation  
+- Strong password validation  
+- Password show/hide toggle  
+- Confirm password validation  
+- File upload with validation  
+
+---
+
+## Steps to Run
+
+1. Clone the repository  
+2. Run: npm install  
+3. Run: ng serve  
+4. Open: http://localhost:4200
+5. 
 
 ## Development server
 
