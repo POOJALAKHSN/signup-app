@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # SignupApp
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.14.
@@ -57,3 +58,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# signup-app
+Angular Signup Form with validations, password toggle, and file upload
+>>>>>>> c41eddda6824854d1e223daa5a8fa9a8fc4ab2d7
