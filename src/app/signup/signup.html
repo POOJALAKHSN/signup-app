@@ -1,0 +1,106 @@
+<h2>SIGNUP FORM</h2>
+
+<form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+
+  <!-- NAME -->
+  <input type="text" placeholder="Enter Name" formControlName="name">
+  <div *ngIf="signupForm.get('name')?.touched && signupForm.get('name')?.invalid">
+    <small *ngIf="signupForm.get('name')?.errors?.['required']">Name is required</small>
+    <small *ngIf="signupForm.get('name')?.errors?.['pattern']">Only letters allowed</small>
+  </div>
+
+  <br><br>
+
+  <!-- EMAIL -->
+  <input type="email" placeholder="Enter Email" formControlName="email">
+  <div *ngIf="signupForm.get('email')?.touched && signupForm.get('email')?.invalid">
+    <small *ngIf="signupForm.get('email')?.errors?.['required']">Email is required</small>
+    <small *ngIf="signupForm.get('email')?.errors?.['email']">Enter valid email</small>
+  </div>
+
+  <br><br>
+
+  <!-- PASSWORD -->
+  <div class="password-container">
+    <input 
+      [type]="showPassword ? 'text' : 'password'" 
+      placeholder="Enter Password" 
+      formControlName="password"
+    >
+    <span class="eye-icon" (click)="togglePassword()">👁️</span>
+  </div>
+
+  <div *ngIf="signupForm.get('password')?.touched && signupForm.get('password')?.invalid">
+    <small *ngIf="signupForm.get('password')?.errors?.['required']">Password is required</small>
+    <small *ngIf="signupForm.get('password')?.errors?.['pattern']">
+      Password must be 8+ chars, include letter, number & special char
+    </small>
+  </div>
+
+  <br><br>
+
+  <!-- PHONE -->
+  <input type="text" placeholder="Enter Phone" formControlName="phone">
+  <div *ngIf="signupForm.get('phone')?.touched && signupForm.get('phone')?.invalid">
+    <small *ngIf="signupForm.get('phone')?.errors?.['required']">Phone is required</small>
+    <small *ngIf="signupForm.get('phone')?.errors?.['pattern']">Enter valid 10 digit number</small>
+  </div>
+
+  <br><br>
+
+  <!-- GENDER -->
+  <label>Gender:</label><br>
+  <input type="radio" value="Male" formControlName="gender"> Male
+  <input type="radio" value="Female" formControlName="gender"> Female
+  <input type="radio" value="Other" formControlName="gender"> Other
+  <div *ngIf="signupForm.get('gender')?.touched && signupForm.get('gender')?.invalid">
+    <small>Gender is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- COUNTRY -->
+  <label>Country:</label><br>
+  <select formControlName="country">
+    <option value="">Select Country</option>
+    <option value="India">India</option>
+    <option value="USA">USA</option>
+    <option value="UK">UK</option>
+  </select>
+  <div *ngIf="signupForm.get('country')?.touched && signupForm.get('country')?.invalid">
+    <small>Country is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- FILE UPLOAD ✅ -->
+  <label>Upload Resume:</label><br>
+  <input type="file" (change)="onFileChange($event)">
+  <div *ngIf="signupForm.get('file')?.touched && signupForm.get('file')?.invalid">
+    <small>File is required</small>
+  </div>
+
+  <br><br>
+
+  <!-- TERMS -->
+  <label>
+    <input type="checkbox" formControlName="terms">
+    I accept Terms & Conditions
+  </label>
+  <div *ngIf="signupForm.get('terms')?.touched && signupForm.get('terms')?.invalid">
+    <small>You must accept terms</small>
+  </div>
+
+  <br><br>
+
+  <!-- SUBMIT -->
+  <button type="submit" [disabled]="signupForm.invalid">
+    Signup
+  </button>
+
+  <br><br>
+
+  <!-- RESPONSE -->
+  <p>{{ responseMessage }}</p>
+
+</form>
