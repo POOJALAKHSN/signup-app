@@ -20,7 +20,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 2. Run: npm install  
 3. Run: ng serve  
 4. Open: http://localhost:4200
-5. 
+   
 
 ## Development server
 
